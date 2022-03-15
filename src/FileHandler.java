@@ -8,10 +8,6 @@ import java.io.RandomAccessFile;
 
 public class FileHandler {
 
-    public static void changeLineToDatabase() {
-        //TODO make it rewrite a comma separated file to make it work with the database//
-    }
-
     public static void appendLine(String fileName, String data) {
         // write text to end of the file
         boolean append = true;
