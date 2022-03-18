@@ -1,43 +1,46 @@
+import java.io.IOException;
+import java.lang.reflect.GenericDeclaration;
+import java.util.Locale;
 import java.util.Scanner;
 import static java.lang.System.exit;
 
 class Main {
-        public static void main(String[] args) {
-            printMenu(options);
-            Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
 
-            int userOption = scanner.nextInt();
+    }
 
-            switch (userOption) {
-                case 1:
-                    createClass();
-                    break;
-                case 2:
-                    System.out.println("Tuesday");
-                    break;
-                case 3:
-                    System.out.println("Wednesday");
-                    break;
+
+    public void selection() {
+                    System.out.println("Welcome:");
+                    Scanner scanner = new Scanner(System.in);
+
+                    System.out.println("1) Create Class");
+                    System.out.println("2) Edit Class");
+                    System.out.println("3) Exit");
+
+                    System.out.println("Please enter you selection:");
+                    int input = scanner.nextInt();
+
+                    switch(input) {
+                        case 1:
+                            // code block
+                            break;
+                        case 2:
+                            // code block
+                            break;
+                        case 3:
+                            String isSure = scanner.nextLine();
+                            isSure.toLowerCase(Locale.ROOT);
+                            switch (isSure) {
+                                case "yes":
+                                    return;
+                                case "no":
+                                    selection();
+                                default:
+                                    selection();
+                            }
+
+                }
             }
-        }
-
-    public static void printMenu(String[] options) {
-        for (String option : options) {
-            System.out.println(option);
-        }
-        System.out.println("Enter your choice");
     }
 
-    public static String[] options = {"1- Create Class",
-            "2- Edit Classes",
-            "3- Exit",
-    };
-
-    public static void createClass() {
-            CreateClassMenu menu = new CreateClassMenu();
-            menu.selectOption();
-    }
-    public static void editCLass() {
-
-    }
-}
