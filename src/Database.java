@@ -1,10 +1,13 @@
+import javax.lang.model.type.ArrayType;
 import java.io.File;
+import java.util.ArrayList;
 
 public class Database {
 
     private String filename;
     private int rowWidth;
     private int recordCount;
+    private ArrayList<Student> students;
 
     public Database(String filename, int rowWidth) {    //constructor//
         this.filename = filename;
@@ -82,6 +85,17 @@ public class Database {
         }
         return -1;
     }
+
+    public ArrayList<Student> returnStudents() {
+
+        for(int i = 0; i < recordCount; i++) {
+            Student x = new Student(getRecord(i));
+            students.add(x);
+        }
+
+        return students;
+    }
+
 }
 
 

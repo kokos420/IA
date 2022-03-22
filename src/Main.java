@@ -7,7 +7,8 @@ import java.util.ArrayList;
 
 class Main {
     private String fileName;
-
+    private ArrayList<Student> students;
+    private String className;
 
 
     public static void main(String[] args) {
