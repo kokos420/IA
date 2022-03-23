@@ -29,8 +29,8 @@ class Main {
 
                     switch(input) {
                         case 1:  //creates a classroom//
-                            // code block
-                            break;
+
+
                         case 2: //opens a classroom and allows the user to edit it//
                             // code block
                             break;
