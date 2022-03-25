@@ -7,7 +7,7 @@ public class Database {
     private String filename;
     private int rowWidth;
     private int recordCount;
-    private ArrayList<Student> students;
+    private ArrayList<Student> students = new ArrayList<>();
 
     public Database(String filename, int rowWidth) {    //constructor//
         this.filename = filename;
@@ -75,7 +75,7 @@ public class Database {
         return false;
     }
 
-    public int findRecordLine(String data) {
+    public int findRecordLine(String data) {   //gets the line where the specified record is at//
         int line = 0;
         for(int i= 0;i<recordCount - 1;i++){
             if(FileHandler.readLineAt(filename,(rowWidth + 2) * i).equals(data)){
@@ -86,7 +86,7 @@ public class Database {
         return -1;
     }
 
-    public ArrayList<Student> returnStudents() {
+    public ArrayList<Student> returnStudents() {   //returns the records as an array list of students//
 
         for(int i = 0; i < recordCount; i++) {
             Student x = new Student(getRecord(i));

@@ -39,6 +39,10 @@ public class Student {
 
     public void printStudent() {      //prints the student in string format//
         System.out.println(name + " " + gender + " " + needsHelp);
+    } //gets the initials of the student//
+
+    public char returnInitials() {
+        return name.charAt(0);
     }
 
     public void changeName(String n, String fileName, int rowWidth) {                //setters for all the variables in the student//
