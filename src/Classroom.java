@@ -38,6 +38,12 @@ public class Classroom {
                 }
         }
 
+        public void printList() {
+                for (int i = 0; i < students.size(); i++) {
+                        System.out.println(students.get(i).returnInitials());
+                }
+        }
+
         public void sort() {
                 Scanner ms = new Scanner(System.in);
                 System.out.println("1) Manual");
@@ -45,15 +51,17 @@ public class Classroom {
                 System.out.println("3) M/F");
                 System.out.println("4) M/F prioritise Needs help");
                 int input = ms.nextInt();
+                Sort mySort = new Sort(students);
+
                 switch (input) {
                         case 1:
-
+                                students = mySort.manual();
                         case 2:
-
+                                students = mySort.alphabetical();
                         case 3:
-
+                              //  students = mySort.mf();//
                         case 4:
-
+                          //      students = mySort.mfNH();//
                 }
         }
 
@@ -78,8 +86,6 @@ public class Classroom {
                                 }
                         }
                 }
-
-                printStudents();
         }
 
 }
