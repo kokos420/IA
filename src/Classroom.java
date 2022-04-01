@@ -59,7 +59,7 @@ public class Classroom {
                         case 2:
                                 students = mySort.alphabetical();
                         case 3:
-                              //  students = mySort.mf();//
+                                students = mySort.mf();
                         case 4:
                           //      students = mySort.mfNH();//
                 }
@@ -74,12 +74,11 @@ public class Classroom {
                 int tYCoord = scanner.nextInt();
 
                 layout[tXCoord - 1][tYCoord - 1] = teacher;   //gets where the teacher is//
-                printStudents();
 
                 int studentCounter = 0;
 
-                for (int i = 0; i < xWidth; i++) {           //puts in the students in the array//
-                        for (int z = 0; z < yWidth; z++) {
+                for (int i = 0; i < yWidth; i++) {           //puts in the students in the array//
+                        for (int z = 0; z < xWidth; z++) {
                                 if (layout[i][z] == null || studentCounter < students.size()) {
                                         layout[i][z] = students.get(studentCounter);
                                         studentCounter++;

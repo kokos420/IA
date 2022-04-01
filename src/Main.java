@@ -14,6 +14,8 @@ class Main {
     public static void main(String[] args) {
         Classroom c = new Classroom("test.txt", 10, 10);
         c.readInStudents();
+
+
         c.printList();
         c.sort();
         System.out.println("------------------------------------------------------");

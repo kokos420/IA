@@ -45,6 +45,14 @@ public class Student {
         return name.charAt(0);
     }
 
+    public char returnGender() {
+        return gender;
+    }
+
+    public boolean returnNH() {
+        return needsHelp;
+    }
+
     public void changeName(String n, String fileName, int rowWidth) {                //setters for all the variables in the student//
         Database db = new Database(fileName, rowWidth);
         int line = db.findRecordLine(toString());
