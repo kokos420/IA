@@ -1,5 +1,6 @@
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Classroom {
@@ -29,6 +30,12 @@ public class Classroom {
                 students = db.returnStudents();
         }
 
+        public ArrayList<Student> returnStudents() {   //reads in the students into the arraylist//
+                Database db = new Database(filename, 16);
+                students = db.returnStudents();
+                return students;
+        }
+
         public void printStudents() { //prints the students//
                 for (int i = 0; i < xWidth; i++) {
                         for (int z = 0; z < yWidth; z++) {
@@ -38,7 +45,7 @@ public class Classroom {
                 }
         }
 
-        public void printList() {
+        public void printList() {  //prints the list of students//
                 for (int i = 0; i < students.size(); i++) {
                         System.out.println(students.get(i).returnInitials());
                 }
@@ -61,7 +68,8 @@ public class Classroom {
                         case 3:
                                 students = mySort.mf();
                         case 4:
-                          //      students = mySort.mfNH();//
+                                students = mySort.mfPrioritiseNeedsHelp();
+                                Collections.reverse(students);
                 }
         }
 
@@ -73,13 +81,13 @@ public class Classroom {
                 System.out.println("now enter y value");
                 int tYCoord = scanner.nextInt();
 
-                layout[tXCoord - 1][tYCoord - 1] = teacher;   //gets where the teacher is//
+                layout[tYCoord - 1][tXCoord - 1] = teacher;   //gets where the teacher is//
 
-                int studentCounter = 0;
+              int studentCounter = 0;
 
                 for (int i = 0; i < yWidth; i++) {           //puts in the students in the array//
                         for (int z = 0; z < xWidth; z++) {
-                                if (layout[i][z] == null || studentCounter < students.size()) {
+                                if (layout[i][z] != teacher && studentCounter < students.size()) {
                                         layout[i][z] = students.get(studentCounter);
                                         studentCounter++;
                                 }

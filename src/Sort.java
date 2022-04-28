@@ -99,7 +99,7 @@ public class Sort {
         return sorted;
     }
 
-    public ArrayList mfNH() {
+    public ArrayList mfPrioritiseNeedsHelp() {   //sort male/female alternating but puts the students that need help at the front//
         ArrayList<Student> m = new ArrayList<>();
         ArrayList<Student> f = new ArrayList<>();
         ArrayList<Student> sorted = new ArrayList<>();
@@ -121,8 +121,21 @@ public class Sort {
                 }
             }
             }
-        //TODO this//
 
+        int fNHcount = fNh.size();
+        int mNHcount = mNh.size();
+
+        for (int i = 0; i < (mNHcount + fNHcount); i++) {
+            if(mNHcount > 0) {
+                sorted.add(mNh.get(i));
+                mNHcount = mNHcount - 1;
+            }
+
+            if(fNHcount > 0) {
+                sorted.add(fNh.get(i));
+                fNHcount = fNHcount - 1;
+            }
+        }
 
         int fcount = f.size();
         int mcount = m.size();
