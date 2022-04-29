@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Selection {
    Scanner scanner = new Scanner(System.in);
    boolean isDone = false;
+   String isSure;
    Classroom c;
    public Selection() {
 
@@ -24,25 +25,28 @@ public class Selection {
          case 1:  //creates a classroom//
                createClass();
          case 2: //opens a classroom and allows the user to edit it//
-            // code block
-            break;
+            //TODO open class from file and display it//
          case 3:
-            String isSure = scanner.nextLine();
+            System.out.println("Are you sure?");
+            isSure = scanner.nextLine();
+            isSure = scanner.nextLine();
             isSure.toLowerCase(Locale.ROOT);
             switch (isSure) {
                case "yes":
-                  //Reset all current values//
+                  //TODO reset all values//
                case "no":
                   selection();
                default:
                   selection();
             }
          case 4:       //ends the program if the user wants to//
+            System.out.println("Are you sure?");
+            isSure = scanner.nextLine();
             isSure = scanner.nextLine();
             isSure.toLowerCase(Locale.ROOT);
             switch (isSure) {
                case "yes":
-                  return;
+                  System.exit(0);
                case "no":
                   selection();
                default:
@@ -83,7 +87,7 @@ public class Selection {
          case 1:
             c.sort();
          case 2:
-            //TODO save class to computer//
+            //TODO priority save class to computer//
             break;
          case 3:
             String isSure = scanner.nextLine();
