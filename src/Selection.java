@@ -2,13 +2,15 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Selection {
+   Scanner scanner = new Scanner(System.in);
+   boolean isDone = false;
+   Classroom c;
    public Selection() {
 
    }
 
    public void selection() {
       System.out.println("Welcome:");
-      Scanner scanner = new Scanner(System.in);
 
       System.out.println("1) Create Class");
       System.out.println("2) Edit Class");
@@ -20,21 +22,7 @@ public class Selection {
 
       switch (input) {
          case 1:  //creates a classroom//
-            System.out.println("enter the text file name with the list of students:");
-            Main.fileName = scanner.next();
-
-            System.out.println("enter the x size of the classroom");
-            int x = scanner.nextInt();
-
-            System.out.println("enter the y size of the classroom");
-            int y = scanner.nextInt();
-
-            Classroom c = new Classroom(Main.fileName, x, y);
-            c.readInStudents();
-            Main.students = c.returnStudents();
-
-            //TODO this menu//
-
+               createClass();
          case 2: //opens a classroom and allows the user to edit it//
             // code block
             break;
@@ -63,4 +51,51 @@ public class Selection {
       }
    }
 
+   public void createClass() {
+      System.out.println("enter the text file name with the list of students:");
+      Main.fileName = scanner.next();
+
+      System.out.println("enter the x size of the classroom");
+      int x = scanner.nextInt();
+
+      System.out.println("enter the y size of the classroom");
+      int y = scanner.nextInt();
+
+      c = new Classroom(Main.fileName, x, y);
+      c.readInStudents();
+      Main.students = c.returnStudents();
+
+      while (isDone == false) {
+         classMenu();
+      }
+   }
+
+   public void classMenu() {
+      System.out.println("What would you like to do:");
+
+      System.out.println("1) Sort Class");
+      System.out.println("2) Save Class");
+      System.out.println("3) Exit");
+
+      System.out.println("Please enter you selection:");
+      int input = scanner.nextInt();
+      switch (input) {
+         case 1:
+            c.sort();
+         case 2:
+            //TODO save class to computer//
+            break;
+         case 3:
+            String isSure = scanner.nextLine();
+            isSure.toLowerCase(Locale.ROOT);
+            switch (isSure) {
+               case "yes":
+                  isDone = true;
+               case "no":
+                  classMenu();
+               default:
+                  classMenu();
+            }
+      }
+   }
 }
