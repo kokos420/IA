@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Sort {
     private ArrayList<Student> students;
+    private Database db;
 
     public Sort(ArrayList<Student> al) {
         this.students = al;
@@ -16,6 +17,7 @@ public class Sort {
         c.readInStudents();
         Scanner scanner = new Scanner(System.in);
         Student temp;
+        db = new Database(Main.fileName,16);
 
         int toSwitch;
         int switchWith;
@@ -31,6 +33,8 @@ public class Sort {
             temp = students.get(toSwitch - 1);
             students.set(toSwitch - 1, students.get(switchWith -1));
             students.set(switchWith- 1, temp);
+
+
 
             System.out.println("Are you finished? (enter y or n) ");
             doneS = scanner.next();

@@ -46,6 +46,13 @@ public class Database {
         }
     }
 
+    public void swapRecord(int toSwap, int swapWith) {
+        //TODO this//
+        String temp = this.getRecord(toSwap);
+        changeRecord(getRecord(swapWith), toSwap);
+        changeRecord(temp, swapWith);
+    }
+
     public void deleteRecord(int rowNumber) {           //deletes a record at a certain line//
         FileHandler.writeLineAt(filename, "----------------", (rowWidth + 2) * rowNumber);
         recordCount--;
