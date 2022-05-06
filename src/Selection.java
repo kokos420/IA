@@ -69,9 +69,12 @@ public class Selection {
       c.readInStudents();
       Main.students = c.returnStudents();
 
+      c.printList();
       while (isDone == false) {
          classMenu();
       }
+
+
    }
 
    public void classMenu() {
@@ -92,6 +95,7 @@ public class Selection {
          case 3:
             String isSure = scanner.nextLine();
             isSure.toLowerCase(Locale.ROOT);
+            isSure = scanner.nextLine();
             switch (isSure) {
                case "yes":
                   isDone = true;

@@ -1,3 +1,4 @@
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.lang.reflect.GenericDeclaration;
 import java.util.Locale;
@@ -14,8 +15,19 @@ class Main {
     public static String className;
 
     public static void main(String[] args) {
-        Selection menu = new Selection();
-        menu.selection();
+       Database db = new Database("test.txt",16);
+
+       db.appendRecord("flfl      ffalse");
+       db.appendRecord("flfl      ffalse");
+       db.appendRecord("flfl      ffalse");
+       db.appendRecord("flfl      ffalse");
+       db.appendRecord("flfl      ffalse");
+
+
+       db.changeRecord("glogg     mfalse",2);
+
+       /* Selection menu = new Selection();
+        menu.selection(); */
     }
 
 

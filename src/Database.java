@@ -41,16 +41,15 @@ public class Database {
             while (data.length() < rowWidth) {
                 data += " ";
             }
-            FileHandler.writeLineAt(filename, data, (rowWidth + 2) * rowNumber);
+            FileHandler.writeLineAt(filename, data, (rowNumber * 16) + (rowNumber)); //for every there is one more character to get to the next line//
             recordCount++;
         }
     }
 
-    public void swapRecord(int toSwap, int swapWith) {
-        //TODO this//
-        String temp = this.getRecord(toSwap);
-        changeRecord(getRecord(swapWith), toSwap);
-        changeRecord(temp, swapWith);
+    public void swapRecord(int toSwap, int swapWith) {  //swaps the record with the other//  //TODO this//
+        String temp = getRecord(toSwap - 1);
+        changeRecord(getRecord(swapWith - 1), toSwap - 1);
+        changeRecord(temp, toSwap - 1);
     }
 
     public void deleteRecord(int rowNumber) {           //deletes a record at a certain line//

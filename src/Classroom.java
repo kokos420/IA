@@ -71,6 +71,8 @@ public class Classroom {
                                 students = mySort.mfPrioritiseNeedsHelp();
                                 Collections.reverse(students);
                 }
+
+                printList();
         }
 
         public void enterStudents() {

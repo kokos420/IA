@@ -12,7 +12,7 @@ public class FileHandler {
         // write text to end of the file
         boolean append = true;
         try (PrintWriter pr = new PrintWriter(new FileWriter(fileName, append))) {
-            pr.println(data);
+            pr.print(data + "\n");
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -21,7 +21,7 @@ public class FileHandler {
 
     public static String readLineAt(String fileName, int start) {
         // grab the line from position "start" in the file
-        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
+        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rw")) {
             rf.seek(start);
             return rf.readLine();
         }
@@ -34,9 +34,11 @@ public class FileHandler {
 
     public static void writeLineAt(String fileName, String data, int start) {
         // overwrite a line from position "start" in the file
-        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
+        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rw")) {
             rf.seek(start);
+
             rf.writeBytes(data);
+
         }
         catch (IOException e) {
             e.printStackTrace();
