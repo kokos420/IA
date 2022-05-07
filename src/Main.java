@@ -16,15 +16,10 @@ class Main {
 
     public static void main(String[] args) {
        Database db = new Database("test.txt",16);
-
-       db.appendRecord("flfl      ffalse");
-       db.appendRecord("flfl      ffalse");
-       db.appendRecord("flfl      ffalse");
-       db.appendRecord("flfl      ffalse");
-       db.appendRecord("flfl      ffalse");
+       db.swapRecord(1,2);
 
 
-       db.changeRecord("glogg     mfalse",2);
+
 
        /* Selection menu = new Selection();
         menu.selection(); */

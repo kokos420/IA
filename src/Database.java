@@ -46,10 +46,12 @@ public class Database {
         }
     }
 
-    public void swapRecord(int toSwap, int swapWith) {  //swaps the record with the other//  //TODO this//
+    public void swapRecord(int toSwap, int swapWith) {  //swaps the record with the other//
         String temp = getRecord(toSwap - 1);
         changeRecord(getRecord(swapWith - 1), toSwap - 1);
-        changeRecord(temp, toSwap - 1);
+        changeRecord(temp, swapWith - 1);
+
+        System.out.println("champ");
     }
 
     public void deleteRecord(int rowNumber) {           //deletes a record at a certain line//
@@ -58,7 +60,7 @@ public class Database {
     }
 
     public String getRecord(int rowNumber) {   //gets the record at a certain row//
-        return FileHandler.readLineAt(filename, (rowWidth + 2) * rowNumber);
+        return FileHandler.readLineAt(filename, (rowNumber * 16) + (rowNumber));
     }
 
     public int getRecordCount() {
