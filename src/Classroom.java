@@ -58,7 +58,7 @@ public class Classroom {
                 System.out.println("3) M/F");
                 System.out.println("4) M/F prioritise Needs help");
                 int input = ms.nextInt();
-                Sort mySort = new Sort(students);
+                Sort mySort = new Sort(Main.studentsG);
 
                 switch (input) {
                         case 1:
@@ -73,6 +73,7 @@ public class Classroom {
                 }
 
                 printList();
+                Main.studentsG = students;
         }
 
         public void enterStudents() {

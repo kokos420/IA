@@ -50,8 +50,6 @@ public class Database {
         String temp = getRecord(toSwap - 1);
         changeRecord(getRecord(swapWith - 1), toSwap - 1);
         changeRecord(temp, swapWith - 1);
-
-        System.out.println("champ");
     }
 
     public void deleteRecord(int rowNumber) {           //deletes a record at a certain line//

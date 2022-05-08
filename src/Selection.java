@@ -33,7 +33,9 @@ public class Selection {
             isSure.toLowerCase(Locale.ROOT);
             switch (isSure) {
                case "yes":
-                  //TODO reset all values//
+                  Main.fileName = null;
+                  Main.studentsG = null;
+
                case "no":
                   selection();
                default:
@@ -67,7 +69,7 @@ public class Selection {
 
       c = new Classroom(Main.fileName, x, y);
       c.readInStudents();
-      Main.students = c.returnStudents();
+      Main.studentsG = c.returnStudents();
 
       c.printList();
       while (isDone == false) {
@@ -91,7 +93,7 @@ public class Selection {
             c.sort();
          case 2:
             //TODO priority save class to computer//
-            break;
+
          case 3:
             String isSure = scanner.nextLine();
             isSure.toLowerCase(Locale.ROOT);

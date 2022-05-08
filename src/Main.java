@@ -11,18 +11,17 @@ import java.util.ArrayList;
 class Main {
 
     public static String fileName;
-    public static ArrayList<Student> students;
-    public static String className;
+    public static ArrayList<Student> studentsG;
 
     public static void main(String[] args) {
        Database db = new Database("test.txt",16);
-       db.swapRecord(1,2);
 
 
 
 
-       /* Selection menu = new Selection();
-        menu.selection(); */
+
+        Selection menu = new Selection();
+        menu.selection();
     }
 
 

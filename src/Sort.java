@@ -35,7 +35,7 @@ public class Sort {
             students.set(toSwitch - 1, students.get(switchWith -1));
             students.set(switchWith- 1, temp);
 
-            db.swapRecord(switchWith,toSwitch);
+            db.swapRecord(switchWith ,toSwitch );
 
             System.out.println("Are you finished? (enter y or n) ");
             doneS = scanner.next();
@@ -59,19 +59,21 @@ public class Sort {
         boolean swapped = true;
         while (swapped == true) {
             swapped = false;
-            for (int i = 0; i < students.size() - 1 - sortedCount; i++ ) {  //TODO doesnt swap in the file//
+            for (int i = 0; i < students.size() - 1 - sortedCount; i++ ) {
                 if (students.get(i).returnInitials() < students.get(i + 1).returnInitials()) {
                     temp = students.get(i);
                     students.set(i , students.get(i + 1));
                     students.set(i + 1, temp);
 
-                    System.out.println("swapped");
                     swapped = true;
-                    db.swapRecord(i + 1,i + 2);
+
+                    //TODO write to the file//
                 }
             }
             sortedCount++;
         }
+
+
 
         return students;
     }
@@ -103,6 +105,8 @@ public class Sort {
                 fcount = fcount - 1;
             }
         }
+
+        //TODO write to the file//
 
         return sorted;
     }
@@ -159,6 +163,7 @@ public class Sort {
                 fcount = fcount - 1;
             }
         }
+        //TODO write to the file//
 
         return sorted;
     }
