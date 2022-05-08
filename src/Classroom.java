@@ -75,8 +75,6 @@ public class Classroom {
                 }
 
 
-
-                printList();
                 Main.studentsG = students;
         }
 
