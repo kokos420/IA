@@ -14,7 +14,7 @@ class Main {
     public static ArrayList<Student> studentsG;
 
     public static void main(String[] args) {
-       Database db = new Database("test.txt",16);
+        Database db = new Database("test.txt",16);
 
 
 
@@ -28,5 +28,5 @@ class Main {
     public static void clear() {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
-    }
+}
 

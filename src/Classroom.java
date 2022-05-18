@@ -65,17 +65,27 @@ public class Classroom {
                 switch (input) {
                         case 1:
                                 students = manual();
+
+                                break;
                         case 2:
                                 students = alphabetical();
+                                Collections.reverse(students);
+                                break;
                         case 3:
                                 students = mf();
-                        case 4:
+
+                                break;
+                       /* case 4:
                                 students = mfPrioritiseNeedsHelp();
                                 Collections.reverse(students);
+                                break; */
+
+                        //TODO save to file//
                 }
 
 
                 Main.studentsG = students;
+                printList();
         }
 
         public void enterStudents() {
@@ -88,7 +98,7 @@ public class Classroom {
 
                 layout[tYCoord - 1][tXCoord - 1] = teacher;   //gets where the teacher is//
 
-              int studentCounter = 0;
+                int studentCounter = 0;
 
                 for (int i = 0; i < yWidth; i++) {           //puts in the students in the array//
                         for (int z = 0; z < xWidth; z++) {
@@ -121,10 +131,8 @@ public class Classroom {
                         switchWith = scanner.nextInt();
 
                         temp = students.get(toSwitch - 1);
-                        students.set(toSwitch - 1, students.get(switchWith -1));
-                        students.set(switchWith- 1, temp);
-
-                        db.swapRecord(switchWith ,toSwitch );
+                        students.set(toSwitch - 1, students.get(switchWith - 1));
+                        students.set(switchWith - 1, temp);
 
                         System.out.println("Are you finished? (enter y or n) ");
                         doneS = scanner.next();
@@ -160,9 +168,6 @@ public class Classroom {
                         }
                         sortedCount++;
                 }
-
-
-
                 return students;
         }
 
@@ -199,7 +204,7 @@ public class Classroom {
                 return sorted;
         }
 
-        public ArrayList mfPrioritiseNeedsHelp() {   //sort male/female alternating but puts the students that need help at the front//
+   /*     public ArrayList mfPrioritiseNeedsHelp() {   //sort male/female alternating but puts the students that need help at the front//
                 ArrayList<Student> m = new ArrayList<>();
                 ArrayList<Student> f = new ArrayList<>();
                 ArrayList<Student> sorted = new ArrayList<>();
@@ -253,6 +258,6 @@ public class Classroom {
                 }
 
                 return sorted;
-        }
+        } */
 
 }

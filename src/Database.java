@@ -58,7 +58,7 @@ public class Database {
     }
 
     public String getRecord(int rowNumber) {   //gets the record at a certain row//
-        return FileHandler.readLineAt(filename, (rowNumber * 16) + (rowNumber));
+        return FileHandler.readLineAt(filename, (rowWidth + 2) * rowNumber);
     }
 
     public int getRecordCount() {
@@ -103,6 +103,7 @@ public class Database {
     }
 
 }
+
 
 
 

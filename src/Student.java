@@ -20,7 +20,14 @@ public class Student {
     public Student(String dbRecord) {           //constructor to make a new student from a database record//
         this.name = dbRecord.substring(0, 9);
         this.gender = dbRecord.charAt(10);
-        this.needsHelp = Boolean.parseBoolean(dbRecord.substring(11, 16));
+
+        this.needsHelpString = dbRecord.substring(11,16);
+        System.out.println(needsHelpString);
+      /*  if (needsHelpString.charAt(1) == 't') {
+            needsHelp = Boolean.parseBoolean(needsHelpString.substring(0,4));
+        } else {
+            needsHelp = Boolean.parseBoolean(dbRecord.substring(11,16));
+        } */
     }
 
     public String toString() {    //returns the student in the string that the database will accept//

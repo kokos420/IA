@@ -23,7 +23,7 @@ public class Selection {
 
       switch (input) {
          case 1:  //creates a classroom//
-               createClass();
+            createClass();
          case 2: //opens a classroom and allows the user to edit it//
             //TODO open class from file and display it//
          case 3:

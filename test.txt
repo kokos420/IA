@@ -1,5 +1,6 @@
 glog      mfalse
-hrmn      ffalse
+hrmn      mfalse
 terr      ffalse
 cham      ffalse
 addd      ffalse
+mau       mtrue
