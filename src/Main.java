@@ -18,8 +18,6 @@ class Main {
 
 
 
-
-
         Selection menu = new Selection();
         menu.selection();
     }

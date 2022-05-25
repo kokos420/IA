@@ -53,12 +53,12 @@ public class Database {
     }
 
     public void deleteRecord(int rowNumber) {           //deletes a record at a certain line//
-        FileHandler.writeLineAt(filename, "----------------", (rowWidth + 2) * rowNumber);
+        FileHandler.writeLineAt(filename, "----------------", (rowNumber * 16) + (rowNumber));
         recordCount--;
     }
 
     public String getRecord(int rowNumber) {   //gets the record at a certain row//
-        return FileHandler.readLineAt(filename, (rowWidth + 2) * rowNumber);
+        return FileHandler.readLineAt(filename, (rowNumber * 16) + (rowNumber));
     }
 
     public int getRecordCount() {

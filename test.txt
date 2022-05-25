@@ -1,6 +1,1 @@
-glog      mfalse
-hrmn      mfalse
-terr      ffalse
-cham      ffalse
-addd      ffalse
-mau       mtrue
+addd      ffalsecham      ffalseglog      mfalsehrmn      mfalseterr      ffalse

@@ -75,14 +75,17 @@ public class Classroom {
                                 students = mf();
 
                                 break;
-                       /* case 4:
+                        case 4:
                                 students = mfPrioritiseNeedsHelp();
                                 Collections.reverse(students);
-                                break; */
+                                break;
 
-                        //TODO save to file//
+
                 }
 
+                for (int i = 0; i < students.size(); i++) {
+                        db.changeRecord(students.get(i).toString(),i);
+                }
 
                 Main.studentsG = students;
                 printList();
@@ -204,7 +207,7 @@ public class Classroom {
                 return sorted;
         }
 
-   /*     public ArrayList mfPrioritiseNeedsHelp() {   //sort male/female alternating but puts the students that need help at the front//
+        public ArrayList mfPrioritiseNeedsHelp() {   //sort male/female alternating but puts the students that need help at the front//
                 ArrayList<Student> m = new ArrayList<>();
                 ArrayList<Student> f = new ArrayList<>();
                 ArrayList<Student> sorted = new ArrayList<>();
@@ -258,6 +261,6 @@ public class Classroom {
                 }
 
                 return sorted;
-        } */
+        }
 
 }

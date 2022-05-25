@@ -21,13 +21,13 @@ public class Student {
         this.name = dbRecord.substring(0, 9);
         this.gender = dbRecord.charAt(10);
 
-        this.needsHelpString = dbRecord.substring(11,16);
+        this.needsHelpString = dbRecord.substring(11,15);
         System.out.println(needsHelpString);
-      /*  if (needsHelpString.charAt(1) == 't') {
+        if (needsHelpString.charAt(1) == 't') {
             needsHelp = Boolean.parseBoolean(needsHelpString.substring(0,4));
         } else {
-            needsHelp = Boolean.parseBoolean(dbRecord.substring(11,16));
-        } */
+            needsHelp = Boolean.parseBoolean(dbRecord.substring(11,15));
+        }
     }
 
     public String toString() {    //returns the student in the string that the database will accept//
